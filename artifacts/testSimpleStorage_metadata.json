@@ -19,6 +19,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "retrieve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -45,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage.sol": "SimpleStorage"
+			"SimpleStorage.sol": "testSimpleStorage"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -60,11 +73,11 @@
 	},
 	"sources": {
 		"SimpleStorage.sol": {
-			"keccak256": "0x5a6f055c0363a5d8aad5ae267886d90cb4e6896df54077c25d56c394a817f717",
+			"keccak256": "0x9796e1e2e2bf5d35f8b30a827b196d3cf7a57ec8a9d9b816af52c08a5a08bc4e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf2ba340afd16bbef65ea9394a081fa41c4d0785019799909ad10cb24505e4e3",
-				"dweb:/ipfs/QmNNidH2QDB8K9xEi8RpmLkvq8Lp5yvBQQAp6Y7ks5Hoyk"
+				"bzz-raw://94fb083c65dcb93f0b8a573fac8055ea2c9eb988a0af3199a73c03155c28d080",
+				"dweb:/ipfs/QmNoUaiYE5WRjU3rTrggAND12tug6TMJrSry3KwDYLvwsp"
 			]
 		}
 	},

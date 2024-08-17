@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
-contract SimpleStorage {
+contract testSimpleStorage {
     //Basic Types: boolean, uint, int, address, bytes
     //uint == uint256 
     //int == int256
@@ -13,6 +13,15 @@ contract SimpleStorage {
 
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
+        retrieve(); //view functions don't cost any gas fees until unless you are not using them within some 
+        //function which is a gas costing function ; like this one here: store()
+    }
+
+    //view, pure functions:
+    //view: just reads from the blockchain
+    //pure: writes as well onto the blockchain
+    function retrieve() public view returns(uint256){
+        return favoriteNumber;
     }
 
 }
