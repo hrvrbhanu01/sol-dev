@@ -18,7 +18,8 @@ contract testSimpleStorage {
 
     Person[] public listOfPeople; //[]  empty list
 
-    //Person public pat = Person({favoriteNumber: 7, name: "pat"});
+    // bhanu -> 23
+    mapping(string => uint256) public nameToFavoriteNumber;
 
     function store(uint256 _favoriteNumber) public {
         myFavoriteNumber = _favoriteNumber;
@@ -33,8 +34,12 @@ contract testSimpleStorage {
         return myFavoriteNumber;
     }
 
+    //calldata, memory, storages
+    //calldata and memory are used for temporarily store the data for a short time period!
+    //calldata are temporary variables cannot be modified , memory are temporary variables which can be verified
+    //storage are permanent variables that can be modified.
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
-        //Person memory newPerson = Person(_favoriteNumber, _name);
-        listOfPeople.push(Person(_favoriteNumber, _name));
+        listOfPeople.push(Person(_favoriteNumber, _name)); //that's how we push objects in an array.
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
