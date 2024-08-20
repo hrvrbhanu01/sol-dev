@@ -1,13 +1,74 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "listOfPeople",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavoriteNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "favoriteNumber",
+				"name": "retrieve",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -47,7 +108,7 @@
 		"compilationTarget": {
 			"SimpleStorage.sol": "SimpleStorage"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -60,11 +121,11 @@
 	},
 	"sources": {
 		"SimpleStorage.sol": {
-			"keccak256": "0x5a6f055c0363a5d8aad5ae267886d90cb4e6896df54077c25d56c394a817f717",
+			"keccak256": "0xa4f512190bc011c03c69779d3f5641b3635a38d11becc089bc17f1f029043942",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf2ba340afd16bbef65ea9394a081fa41c4d0785019799909ad10cb24505e4e3",
-				"dweb:/ipfs/QmNNidH2QDB8K9xEi8RpmLkvq8Lp5yvBQQAp6Y7ks5Hoyk"
+				"bzz-raw://786cf32d84bca8b46669c7e833f25c3959bb186da66aab508ac9e6d19faa1026",
+				"dweb:/ipfs/QmVMvoLp8eiTN6hvyg7SHfyNKzBJ6SkDqNVk64uEiDuWdP"
 			]
 		}
 	},
