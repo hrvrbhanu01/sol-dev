@@ -21,7 +21,7 @@ contract SimpleStorage {
     // bhanu -> 23
     mapping(string => uint256) public nameToFavoriteNumber;
 
-    function store(uint256 _favoriteNumber) public {
+    function store(uint256 _favoriteNumber) public virtual {
         myFavoriteNumber = _favoriteNumber;
         retrieve(); //view functions don't cost any gas fees until unless you are not using them within some
         //function which is a gas costing function ; like this one here: store()
