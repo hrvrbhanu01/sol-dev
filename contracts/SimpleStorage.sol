@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.18;
 
 contract SimpleStorage {
     //Basic Types: boolean, uint, int, address, bytes
@@ -43,3 +43,7 @@ contract SimpleStorage {
         nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
+
+contract SimpleStorage2 {}
+
+contract SimpleStorage3 {}
