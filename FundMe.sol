@@ -1,0 +1,13 @@
+// Get funds from Users
+// Withdraw funds
+// Set a minimum funding value
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.18;
+
+contract FundMe{
+    function fund() public {
+        
+    }
+}
