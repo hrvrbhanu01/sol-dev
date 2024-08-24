@@ -12,11 +12,15 @@ contract FundMe {
 
     uint256 public minimumUsd = 5 * 1e18;
 
+    address [] public funders; // i want to keep track of the users who sent us money!
+    mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
+
     function fund() public payable {
         // allow users to send $
         // Have a minimum $ sent
         // 1. How do we send ETH to this contract?
         require(getConversionRate(msg.value) >= minimumUsd, "didn't send enough ETH"); // 1e18 = 1 ETH = 1000000000000000000 Wei = 1 * 10 ** 18
+        addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
     }
 
     //function withdraw() public {}
