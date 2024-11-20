@@ -13,8 +13,14 @@ contract FundMe {
 
     uint256 public minimumUsd = 5 * 1e18;
 
+    address public owner;
+    
     address [] public funders; // i want to keep track of the users who sent us money!
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
+
+    constructor() {
+        owner = msg.sender;
+    }
 
     function fund() public payable {
         require(msg.value.getConversionRate() >= minimumUsd, "didn't send enough ETH"); // 1e18 = 1 ETH = 1000000000000000000 Wei = 1 * 10 ** 18
@@ -22,6 +28,7 @@ contract FundMe {
     }
 
     function withdraw() public {
+        require(msg.sender == owner, "Must be the owner");
         // for loop
         // [1, 2, 3, 4] elements
         // 0, 1, 2, 3   indexes
