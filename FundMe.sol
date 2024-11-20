@@ -14,7 +14,7 @@ contract FundMe {
     uint256 public minimumUsd = 5 * 1e18;
 
     address public owner;
-    
+
     address [] public funders; // i want to keep track of the users who sent us money!
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
@@ -27,12 +27,9 @@ contract FundMe {
         addressToAmountFunded[msg.sender] += msg.value;
     }
 
-    function withdraw() public {
-        require(msg.sender == owner, "Must be the owner");
-        // for loop
-        // [1, 2, 3, 4] elements
-        // 0, 1, 2, 3   indexes
-        //for( starting index, ending index, step amount )
+    function withdraw() public onlyOwner{
+        //require(msg.sender == owner, "Must be the owner");
+        
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++){
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
@@ -58,6 +55,11 @@ contract FundMe {
         (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call Failed!");
 
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Sender is not the owner!");
+        _;
     }
 
 }
